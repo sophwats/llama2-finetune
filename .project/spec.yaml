@@ -68,6 +68,36 @@ environment:
         proxy:
           trim_prefix: false
         url: http://localhost:6006
+    - name: Setup-7b
+      type: custom
+      class: process
+      start_command: /bin/bash /project/code/init/init-7b.sh
+      health_check_command: pgrep -f "^/bin/bash /project/code/init/init-7b.sh" >/dev/null
+      stop_command: pkill -f "^/bin/bash /project/code/init/init-7b.sh"
+      user_msg: ""
+      icon_url: ""
+      process_options:
+        wait_until_finished: true
+    - name: Setup-13b
+      type: custom
+      class: process
+      start_command: /bin/bash /project/code/init/init-13b.sh
+      health_check_command: pgrep -f "^/bin/bash /project/code/init/init-13b.sh" >/dev/null
+      stop_command: pkill -f "^/bin/bash /project/code/init/init-13b.sh"
+      user_msg: ""
+      icon_url: ""
+      process_options:
+        wait_until_finished: true
+    - name: Setup-70b
+      type: custom
+      class: process
+      start_command: /bin/bash /project/code/init/init-70b.sh
+      health_check_command: pgrep -f "^/bin/bash /project/code/init/init-70b.sh" >/dev/null
+      stop_command: pkill -f "^/bin/bash /project/code/init/init-70b.sh"
+      user_msg: ""
+      icon_url: ""
+      process_options:
+        wait_until_finished: true
     programming_languages:
     - python3
     icon_url: ""
@@ -79,8 +109,7 @@ environment:
     user_info:
       uid: "0"
       gid: "0"
-      username: "root"
-      is_root: null
+      username: root
     package_managers:
     - name: apt
       binary_path: /usr/bin/apt
@@ -117,7 +146,9 @@ execution:
     gpu:
       requested: 1
     sharedMemoryMB: 1024
-  secrets: []
+  secrets:
+  - variable: HF_API_KEY
+    description: API Key for Accessing Llama 2 on Hugging Face
   mounts:
   - type: project
     target: /project/
