@@ -72,7 +72,8 @@ environment:
       type: custom
       class: process
       start_command: /bin/bash /project/code/scripts/init-7b.sh
-      health_check_command: pgrep -f "^/bin/bash /project/code/scripts/init-7b.sh" >/dev/null
+      health_check_command: pgrep -f "^/bin/bash /project/code/scripts/init-7b.sh"
+        >/dev/null
       stop_command: pkill -f "^/bin/bash /project/code/scripts/init-7b.sh"
       user_msg: ""
       icon_url: ""
@@ -82,7 +83,8 @@ environment:
       type: custom
       class: process
       start_command: /bin/bash /project/code/scripts/init-13b.sh
-      health_check_command: pgrep -f "^/bin/bash /project/code/scripts/init-13b.sh" >/dev/null
+      health_check_command: pgrep -f "^/bin/bash /project/code/scripts/init-13b.sh"
+        >/dev/null
       stop_command: pkill -f "^/bin/bash /project/code/scripts/init-13b.sh"
       user_msg: ""
       icon_url: ""
@@ -92,7 +94,8 @@ environment:
       type: custom
       class: process
       start_command: /bin/bash /project/code/scripts/init-70b.sh
-      health_check_command: pgrep -f "^/bin/bash /project/code/scripts/init-70b.sh" >/dev/null
+      health_check_command: pgrep -f "^/bin/bash /project/code/scripts/init-70b.sh"
+        >/dev/null
       stop_command: pkill -f "^/bin/bash /project/code/scripts/init-70b.sh"
       user_msg: ""
       icon_url: ""
