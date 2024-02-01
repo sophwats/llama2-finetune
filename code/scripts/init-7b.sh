@@ -1,3 +1,5 @@
+echo "Initializing the 7B model."
+
 if [ ! -f /project/models/llama-7b.nemo ]; then
     # Ensure git-lfs is available
     curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash
@@ -12,3 +14,6 @@ if [ ! -f /project/models/llama-7b.nemo ]; then
 else
     echo "llama-7b.nemo already exists. Skipping."
 fi
+
+sleep 5
+echo "7B model is initialized."
