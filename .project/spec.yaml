@@ -71,9 +71,9 @@ environment:
     - name: Setup-7b
       type: custom
       class: process
-      start_command: /bin/bash /project/code/init/init-7b.sh
-      health_check_command: pgrep -f "^/bin/bash /project/code/init/init-7b.sh" >/dev/null
-      stop_command: pkill -f "^/bin/bash /project/code/init/init-7b.sh"
+      start_command: /bin/bash /project/code/scripts/init-7b.sh
+      health_check_command: pgrep -f "^/bin/bash /project/code/scripts/init-7b.sh" >/dev/null
+      stop_command: pkill -f "^/bin/bash /project/code/scripts/init-7b.sh"
       user_msg: ""
       icon_url: ""
       process_options:
@@ -81,9 +81,9 @@ environment:
     - name: Setup-13b
       type: custom
       class: process
-      start_command: /bin/bash /project/code/init/init-13b.sh
-      health_check_command: pgrep -f "^/bin/bash /project/code/init/init-13b.sh" >/dev/null
-      stop_command: pkill -f "^/bin/bash /project/code/init/init-13b.sh"
+      start_command: /bin/bash /project/code/scripts/init-13b.sh
+      health_check_command: pgrep -f "^/bin/bash /project/code/scripts/init-13b.sh" >/dev/null
+      stop_command: pkill -f "^/bin/bash /project/code/scripts/init-13b.sh"
       user_msg: ""
       icon_url: ""
       process_options:
@@ -91,9 +91,9 @@ environment:
     - name: Setup-70b
       type: custom
       class: process
-      start_command: /bin/bash /project/code/init/init-70b.sh
-      health_check_command: pgrep -f "^/bin/bash /project/code/init/init-70b.sh" >/dev/null
-      stop_command: pkill -f "^/bin/bash /project/code/init/init-70b.sh"
+      start_command: /bin/bash /project/code/scripts/init-70b.sh
+      health_check_command: pgrep -f "^/bin/bash /project/code/scripts/init-70b.sh" >/dev/null
+      stop_command: pkill -f "^/bin/bash /project/code/scripts/init-70b.sh"
       user_msg: ""
       icon_url: ""
       process_options:
@@ -148,9 +148,9 @@ execution:
     sharedMemoryMB: 1024
   secrets:
   - variable: HF_USERNAME
-    description: Username for Accessing Llama 2 on Hugging Face
+    description: Hugging Face account username for Accessing Llama 2
   - variable: HF_API_KEY
-    description: API Key for Accessing Llama 2 on Hugging Face
+    description: Hugging Face API Key for Accessing Llama 2
   mounts:
   - type: project
     target: /project/
