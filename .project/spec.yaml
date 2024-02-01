@@ -147,6 +147,8 @@ execution:
       requested: 1
     sharedMemoryMB: 1024
   secrets:
+  - variable: HF_USERNAME
+    description: Username for Accessing Llama 2 on Hugging Face
   - variable: HF_API_KEY
     description: API Key for Accessing Llama 2 on Hugging Face
   mounts:
