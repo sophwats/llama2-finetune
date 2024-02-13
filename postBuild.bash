@@ -4,4 +4,7 @@
 #
 # Note: This file may be removed if you don't need to use it
 
+curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash
+apt-get install git-lfs
+
 jupyter nbextension enable --py widgetsnbextension
